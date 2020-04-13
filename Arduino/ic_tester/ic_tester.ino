@@ -1,3 +1,10 @@
+#include <pin_magic.h>
+#include <registers.h>
+#include <SPFD5408_Adafruit_GFX.h>
+#include <SPFD5408_Adafruit_TFTLCD.h>
+#include <SPFD5408_TouchScreen.h>
+#include <SPFD5408_Util.h>
+
 //LED
 #include <FastLED.h>
 
@@ -10,9 +17,9 @@
 CRGB leds[NUM_LEDS];
 
 //TFT
-#include <Adafruit_GFX.h>    // Core graphics library
-#include <Adafruit_TFTLCD.h> // Hardware-specific library
-#include <TouchScreen.h> //Touch Screen Library
+//#include <Adafruit_GFX.h>    // Core graphics library
+//#include <Adafruit_TFTLCD.h> // Hardware-specific library
+//#include <TouchScreen.h> //Touch Screen Library
 
 #define LCD_CS A3 // Chip Select goes to Analog 3
 #define LCD_CD A2 // Command/Data goes to Analog 2
@@ -20,10 +27,16 @@ CRGB leds[NUM_LEDS];
 #define LCD_RD A0 // LCD Read goes to Analog 0
 #define LCD_RESET A4 // LCD RESET goes to Analog 4
 
-#define YP A3  // must be an analog pin, use "An" notation!
-#define XM A2  // must be an analog pin, use "An" notation!
-#define YM 9   // can be a digital pin
-#define XP 8   // can be a digital pin
+#define YP A1  // must be an analog pin, use "An" notation! A2
+#define XM A2  // must be an analog pin, use "An" notation! A1
+#define YM 7   // can be a digital pin 6
+#define XP 6   // can be a digital pin 7
+
+//Defaults below - MJC
+//#define YP A3  // must be an analog pin, use "An" notation!
+//#define XM A2  // must be an analog pin, use "An" notation!
+//#define YM 9   // can be a digital pin
+//#define XP 8   // can be a digital pin
 
 #define TS_MINX 150
 #define TS_MINY 120
@@ -209,4 +222,3 @@ void getTouch()
   pinMode(YP, OUTPUT);
   digitalWrite(YP, HIGH);
 }
-

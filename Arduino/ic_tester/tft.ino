@@ -6,7 +6,7 @@ void tft_init()
     identifier = 0x9341;
   tft.begin(identifier);
   Serial.println("TFT initialized!!");
-  tft.setRotation(3);
+  tft.setRotation(1);
   screenStatus = 0;
   startScreen();
 }
@@ -31,7 +31,7 @@ void startScreen()
   tft.println("By");
   tft.setCursor(45, 160);
   tft.setTextColor(WHITE);  tft.setTextSize(3);
-  tft.println("Akshay Baweja");
+  tft.println("RudeDog Retros");
   tft.setCursor(20, 220);
   tft.setTextColor(RED);  tft.setTextSize(2);
   tft.println("Touch anywhere to START");
@@ -291,4 +291,3 @@ void manualSearchResult(String number, String name, int status)
   getTouch();
   resetFunc();
 }
-
